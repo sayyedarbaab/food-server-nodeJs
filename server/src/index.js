@@ -7,7 +7,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.use("/images", express.static(path.join(__dirname, "../public/images")));
+// app.use("/images", express.static(path.join(__dirname, "../public/images")));
+app.use("/images", express_1.default.static("public/images"));
 
 app.get("/", (req, res) => {
   console.log(path.join(__dirname, "../public"));
@@ -59,6 +60,6 @@ app.get("/", (req, res) => {
   res.json(foodData);
 });
 
-app.listen(9000, () => {
-  console.log("Server is running on port 9000");
+app.listen(9200, () => {
+  console.log("Server is running on port 9200");
 });
